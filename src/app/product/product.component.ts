@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { StoreService } from '../services/store.service';
 import { Product } from './product.models';
 
 @Component({
@@ -7,16 +8,18 @@ import { Product } from './product.models';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent {
-  // product: Product = {
-  //   id: '1',
-  //   name: 'Product 1',
-  //   image: 'https://picsum.photos/200/300',
-  //   price: 300,
-  // };
+  total = 0;
+  constructor(private service: StoreService) {}
   @Input('product') product: Product = {
     id: '',
     image: '',
     name: '',
     price: 0,
   };
+  @Output() itemEE = new EventEmitter();
+  onAddProduct(product: Product) {
+    this.service.addProduct(product);
+    this.total = this.service.getTotal();
+    this.itemEE.emit(this.total);
+  }
 }

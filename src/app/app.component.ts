@@ -9,6 +9,7 @@ import { Product } from './product/product.models';
 export class AppComponent {
   title = 'angular-platzi';
   imageUrl = '';
+  total = 0;
   products: Product[] = [
     {
       id: '1',
@@ -32,5 +33,8 @@ export class AppComponent {
 
   onLoaded(img: string) {
     console.log(img);
+  }
+  onPriceClick(event: number){
+    this.total = event
   }
 }
