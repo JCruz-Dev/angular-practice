@@ -12,9 +12,12 @@ export class ProductComponent {
   constructor(private service: StoreService) {}
   @Input('product') product: Product = {
     id: '',
+    title: '',
     image: '',
     name: '',
     price: 0,
+    description: '',
+    category: '',
   };
   @Output() itemEE = new EventEmitter();
   onAddProduct(product: Product) {

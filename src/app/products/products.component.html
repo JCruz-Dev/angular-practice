@@ -1,0 +1,6 @@
+<h1>Total de Productos: {{ total }}</h1>
+<app-product
+  (itemEE)="onPriceClick($event)"
+  [product]="product"
+  *ngFor="let product of products"
+></app-product>
