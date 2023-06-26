@@ -12,6 +12,7 @@ export class ProductsComponent {
   myShoppingCart: Product[] = [];
   total = 0;
   products: Product[] = [];
+  date = new Date(2020, 10, 5);
   constructor(
     private productService: ProductsService,
     private store: StoreService

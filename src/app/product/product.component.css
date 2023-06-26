@@ -1,5 +1,9 @@
 .product-card {
   margin-bottom: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  height: 250px;
+  display: grid;
+  place-items: center;
 }
 .product-card img {
   width: 80px;

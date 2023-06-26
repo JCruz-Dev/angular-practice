@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { ImageComponent } from './image/image.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { BgcolorDirective } from './directives/bgcolor.directive';
 
 @NgModule({
-  declarations: [AppComponent, ImageComponent, ProductComponent, ProductsComponent],
+  declarations: [AppComponent, ImageComponent, ProductComponent, ProductsComponent, ReversePipe, BgcolorDirective],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
