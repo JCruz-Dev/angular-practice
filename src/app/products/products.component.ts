@@ -13,6 +13,7 @@ export class ProductsComponent {
   total = 0;
   products: Product[] = [];
   date = new Date(2020, 10, 5);
+  counter = 0;
   constructor(
     private productService: ProductsService,
     private store: StoreService
@@ -22,6 +23,9 @@ export class ProductsComponent {
   ngOnInit() {
     this.productService.getAllProducts().subscribe((data) => {
       this.products = data;
+    });
+    this.store.myCart$.subscribe((items) => {
+      this.counter = items.length;
     });
   }
   onPriceClick(event: number) {

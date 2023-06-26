@@ -10,7 +10,7 @@ import {
   selector: '[appBgcolor]',
 })
 export class BgcolorDirective {
-  @Input('color') color!: string;
+  @Input() color!: string;
   @HostListener('mouseenter') onMouseEnter() {
     this.element.nativeElement.style.color = 'blue';
   }
